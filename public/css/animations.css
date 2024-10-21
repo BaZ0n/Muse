@@ -1,0 +1,103 @@
+.header a {
+    font-size: 2.5em;
+    margin: 5px 80px;
+    color:var(--white);
+    transition: color .2s linear;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: var(--primary-color);
+}
+
+.button-primary {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    transition: all 0.2s linear;
+    width: auto;
+    height: auto;
+}
+
+.button-primary:hover {
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.exitBtn {
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+}
+
+.exitBtn p {
+    color: var(--white);
+    transition: color .2s linear;
+}
+
+.exitBtn p:hover {
+    color: var(--primary-color);
+}
+
+.postText {
+    color:var(--white);
+    padding: 5px 15px ;
+    background-color: var(--bgPosts);
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px;
+    transition: all .2s linear;
+}
+
+.postCont:hover{
+    box-shadow: 0 0 15px var(--primary-color);
+    
+}
+
+.stories {
+    transition: all .2s linear;
+    width: 200px;
+    height: 300px;
+    border-radius: 5%;
+}
+
+.stories:hover{
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: scale(1.2);
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    transition: color .2s linear;
+}
+
+.logo:hover {
+    color: var(--primary-color);
+}
+
+.barBtn :hover{
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: 50%;
+    transform: scale(1.1);
+}
+
+.btn-container {
+    background: #FFFFFF;
+    transition: color .2s linear;
+}
+
+.signinBtn {
+    color: var(--white);
+    background:black;
+}
+
+.loginBtn p{
+    color:black;
+    transition: color .2s linear;
+}
+
+.loginBtn p:hover {
+    color: var(--primary-color);
+}
+
+.signinBtn p:hover {
+    color: var(--primary-color);;
+}

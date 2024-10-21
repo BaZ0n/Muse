@@ -1,0 +1,38 @@
+.posts-container {
+    color:white; 
+    font-family:Roboto;
+    width: auto;
+    padding: 0 5%;
+}
+
+.postRead {
+    text-decoration: none;
+}
+
+.postCont {
+    transition: all .2s linear; 
+    border-radius: 15px; 
+    list-style-type: none;
+    width: auto;    
+    margin: 3% 5%; 
+}
+
+.postCont .img {
+    object-fit:cover; 
+    height:250px; 
+    object-fit:cover; 
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+}
+
+.postText h4, p{
+    padding: 0 3%;
+    color: var(--white);
+}
+
+.row {
+    justify-content: 
+    space-between; 
+    color: #828282;
+    align-items: center;
+}

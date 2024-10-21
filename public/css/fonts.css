@@ -1,0 +1,26 @@
+:root {
+    --primary-color: #FACE8D;
+    --bgPosts: #202020;
+    --bgSearchbar: #121212;
+    --textGray: #D2D2D2;
+    --white: #FFFFFF;
+    --textGrayOnLight: #828282;
+    --textBlackOnLight: #0D0D0D;
+    --black: #000000;
+}
+
+body {
+    background-color: var(--black);
+    font-family: Cormorant Garamond;
+}
+
+@font-face {
+    font-family: 'Caravan';
+    src: 
+        url('/fonts/Caravan.woff2') format('woff2'),
+        url('/fonts/Caravan.woff') format('woff'),
+        url('/fonts/Caravan.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
