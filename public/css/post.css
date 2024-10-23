@@ -1,7 +1,7 @@
 .posts-container {
     color:white; 
     font-family:Roboto;
-    width: auto;
+    max-width: fit-content;
     padding: 0 5%;
 }
 
@@ -13,14 +13,13 @@
     transition: all .2s linear; 
     border-radius: 15px; 
     list-style-type: none;
-    width: auto;    
+    max-width: 52rem;    
     margin: 3% 5%; 
 }
 
 .postCont .img {
     object-fit:cover; 
     height:250px; 
-    object-fit:cover; 
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
 }

@@ -7,11 +7,11 @@
 
 @section('main_content')
 
-    <div class="container mt-5 pt-5" style="font-family: Cormorant Garamond; background: white; border-radius:50px; width: 30%;">
+    <div class="container mt-5 pt-5" style="font-family: Cormorant Garamond; background: white; border-radius:50px; width: 40%;">
         
         <h1 class="text-center fs-2 mb-3">Вход</h1> {{-- Вход, информативно не правда ли --}}
 
-        <div class="container p-3"> {{-- Контейнер для полей и кнопки --}}
+        <div class="container p-3 mb-5"> {{-- Контейнер для полей и кнопки --}}
             <form>
 
                 {{-- Почта --}}

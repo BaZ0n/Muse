@@ -1,7 +1,7 @@
 @extends("blog/profileLayout")
 
 @section("main_content")
-    <div class="container align-items-center d-flex justify-content-center">
+    <div class="container align-items-center d-flex justify-content-center" style="margin-left:0">
         <div class="col-8 my-5 mx-5">
             <h1 class="text-center fs-1" style="font-family: Cormorant Garamond; color:white">Профиль</h1>
             <form>

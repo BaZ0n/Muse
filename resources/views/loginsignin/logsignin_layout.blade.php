@@ -23,7 +23,7 @@
     </div>
 
     {{-- Заголовок --}}
-    <div class="container mb-5 pb-5">
+    <div class="container pb-5">
         <h1 class="text-center" style="font-family: Caravan; color: #FACE8D; font-size: 130px">Каждая идея</h1>
         <h1 class="text-center fs-1" style="color: #FFFFFF">это шаг к вдохновению</h1>
     </div>

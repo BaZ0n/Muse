@@ -37,11 +37,11 @@
             </div>
 
             {{-- Правый столбец --}}
-            <div class="col-5 my-5 mx-5">
+            <div class="col-6 my-5 mx-5">
                 <h1 class="text-center fs-1 mx-5" style="font-family: Cormorant Garamond; color:white">Регистрация</h1>
 
                 {{-- Форма регистрации --}}
-                <form>
+                <form style=>
 
                     {{-- Имя --}}
                     <div class="form-group my-3">

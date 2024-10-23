@@ -3,8 +3,8 @@
 @section("main_content")
 
     {{-- Поиск --}}
-    <div class="container mx-2 my-5 px-5">
-        <div class="input-group w-auto mx-5" style="background: #121212; border-radius:50px">
+    <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%">
             <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
         </div>
     </div>
@@ -51,8 +51,8 @@
     </div>
 
     {{-- Панель для написания постов --}}
-    <div class="container mx-2 my-5 px-5">
-        <div class="input-group w-auto mx-5" style="background: #121212; border-radius:50px">
+    <div class="container mx-2 my-5 px-5" style="max-width: fit-content">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width:110%">
             <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
                 aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
             <a href="#" class="barBtn"> <img src="images/photoBTN.png" class="image mx-2 my-2"></a>
@@ -62,7 +62,7 @@
 
     {{-- Посты --}}
     
-    <ul class="posts-container">
+    <ul class="posts-container px-5">
 
         <a class="postRead" href="/post">
             <li id="post" class="postCont">

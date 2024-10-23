@@ -16,23 +16,23 @@
 <body>
     <div class="container-fluid">
         <div class="row align-items-start" style="justify-content: space-between">
-            <div class="col-5">
-                <div class="container h-auto w-auto" style="background-image: url({{asset('images/backgroundCustom1.png')}}); background-repeat: no-repeat; position:fixed; left: 0; bottom: 0; top: 0;">
-                    <div class="container mt-3">
+            <div class="col align-self-start" style="width:fit-content; padding-left:0">
+                <div class="container h-auto w-auto" style="background-image: url({{asset('images/backgroundCustom1.png')}}); background-size: contain; margin-right:0">
+                    <div class="container">
                         <a href="/" class="logo fs-4 mx-4">muse.</a>
                         <div class="container d-flex" style="justify-content: center; align-items: center; flex-direction: column; color: var(--white)">
                             <img id="userPhoto" src="images/profileImage.png" class="rounded-circle mx-4 my-4 d-block w-50 h-50" style="border: 5px solid var(--white)">
                             <h1 id="username" class="text-center fs-1 mt-1">НН с города N</h1>
                             <h3 id="status" class="text-center fs-3 mt-2">Прыг-Скок</h3>
                             <hr style="color:gray; width: 100%">
-                            <h2 id="aboutUser" class="text-center">О себе.</h2>
+                            <h2 id="aboutUser" class="text-center mb-5">О себе.</h2>
                         </div> 
                     </div>
                 </div> 
             </div>
             
-            <div class="col" style="margin-left: 2%; margin-right:2%">
-                <div class="header d-flex align-items-center my-4" style="justify-content: center; align-items: center;">
+            <div class="col align-self-end" style="margin-left: 2%; margin-right: 2%; width:fit-content;">
+                <div class="header d-flex align-items-center my-4" style="justify-content: center; align-items: center; max-width:fit-content">
                     <a href="/blogMain">Главная</a>
                     <a href="/profile">Профиль</a>
                     <a href="/news">Новости</a>

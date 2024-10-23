@@ -31,11 +31,8 @@
         <h2 class="text-center" style="color: #FFFFFF; font-size: 50px">это шаг к вдохновению</h2>
     </div>
 
-    {{-- заглушка чтоб расстояние больше было --}} 
-    <div class="container my-5 py-5"></div> 
-
     {{-- Кнопки входа и выхода --}}
-    <div class="container d-flex justify-content-center align-items-center mt-5 py-5 ">  
+    <div class="container d-flex justify-content-center align-items-center my-5 py-5">  
         <div class="btn-container d-flex justify-content-center align-items-center mt-5 px-1" style=" width: 450px; height: 70px; border-radius: 100px; font-family: Cormorant Garamond;">
 
             {{-- кнопка входа --}}

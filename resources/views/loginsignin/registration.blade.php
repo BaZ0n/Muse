@@ -6,10 +6,10 @@
 
 @section('main_content')
 
-    <div class="container mt-5 pt-5" style="font-family: Cormorant Garamond; background: white; border-radius:50px; width: 30%;">
+    <div class="container mt-5 pt-5" style="font-family: Cormorant Garamond; background: white; border-radius:50px; width: 40%;">
 
         <h1 class="text-center fs-2 mb-3">Регистрация</h1>
-        <div class="container p-3">
+        <div class="container p-3 mb-5">
             <form>
 
                 {{-- Форма для ввода почты пользователя --}}

@@ -2,8 +2,8 @@
 
 @section("main_content")
 
-    <div class="container my-3 px-5" style="color:white; font-family:Roboto">
-        <div class="container mx-3 px-0" style="background-color: #202020; border-radius: 5px">
+    <div class="container my-3 px-5" style="color:white; font-family:Roboto; margin-left:0%; width:fit-content">
+        <div class="container mx-3 px-0" style="background-color: #202020; border-radius: 5px;  width:fit-content">
             <h2 id="postTitle" class="text-center py-3 px-5">Как писать код быстро и безболезненно?</h2>
             <img class="img w-100" src="images/background.png" alt="Image" id="postImage" style="object-fit:cover; height:250px; object-fit:cover">
             <p class="text px-4 py-3 fs-5">Не будем ходить вокруг да около и скажем прямо: А НИКАК НАХУЙ. А ты чё думал, всё будет просто? А вот хуй тебе. 
