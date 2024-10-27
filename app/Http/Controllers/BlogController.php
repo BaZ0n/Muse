@@ -29,7 +29,8 @@ class BlogController extends Controller
                 foreach ($users->all() as $user){
                     if($user->email == Request::input("email")){
                         ActiveUser::getInstance()->setUser($user);
-                        return view('blog/blogMain', ['user' => $user]);
+                        //return view('blog/blogMain', ['user' => $user]);
+                        return redirect()->action([BlogController::class, 'blogMain']);
                     }
                 }
             }
@@ -38,7 +39,8 @@ class BlogController extends Controller
             foreach ($users->all() as $user){
                 if(($user->email == Request::input("inputEmail"))&&($user->password == Request::input("inputPassword"))){
                     ActiveUser::getInstance()->setUser($user);
-                    return view('blog/blogMain', ['user' => $user]);
+                    //return view('blog/blogMain', ['user' => $user]);
+                    return redirect()->action([BlogController::class, 'blogMain']);
                 }
             }
         }
