@@ -10,10 +10,6 @@ Route::get('/login', [LoginController::class, 'login']);
 
 Route::post('/login/check' , [LoginController::class,'login_check']);
 
-Route::get('/registration', [LoginController::class, 'registration']);
-
-Route::get('/registrationCode', [LoginController::class, 'registrationCode']);
-
 Route::get('/registrationMain', [LoginController::class, 'registrationMain']);
 
 Route::post('/blogMain', [BlogController::class, 'blogMain']);
