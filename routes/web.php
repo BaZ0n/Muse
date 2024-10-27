@@ -12,7 +12,9 @@ Route::post('/login/check' , [LoginController::class,'login_check']);
 
 Route::get('/registrationMain', [LoginController::class, 'registrationMain']);
 
-Route::post('/blogMain', [BlogController::class, 'blogMain']);
+Route::post('/blogMainPost', [BlogController::class, 'blogMainPost']);
+
+Route::get('/blogMain', [BlogController::class, 'blogMain']);
 
 Route::get('/profile', [BlogController::class, 'profile']);
 

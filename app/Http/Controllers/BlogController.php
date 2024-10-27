@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use App\Providers\ActiveUser;
 use Request;
 
 
 class BlogController extends Controller
 {
-    public function blogMain(Request $request){
+    
+    public function blogMainPost(Request $request){
         $users = new Users();
         if ((Request::input("password") == Request::input("passwordRepeat"))&& (Request::input("password") != null)){
             $flag = false;
@@ -26,30 +28,43 @@ class BlogController extends Controller
                 $users->save();
                 foreach ($users->all() as $user){
                     if($user->email == Request::input("email")){
+                        ActiveUser::getInstance()->setUser($user);
                         return view('blog/blogMain', ['user' => $user]);
                     }
                 }
             }
-            return redirect() -> back();
         }
-
-        foreach ($users->all() as $user){
-            if(($user->email == Request::input("inputEmail"))&&($user->password == Request::input("inputPassword"))){
-                return view('blog/blogMain', ['user' => $user]);
+        else if ((Request::input('inputPassword') != null)&&(Request::input('inputEmail')!= null)){
+            foreach ($users->all() as $user){
+                if(($user->email == Request::input("inputEmail"))&&($user->password == Request::input("inputPassword"))){
+                    ActiveUser::getInstance()->setUser($user);
+                    return view('blog/blogMain', ['user' => $user]);
+                }
             }
+        }
+        else if ((Request::input('inputPassword') == null) && (Request::input("password") == null)){
+            return view('blog/blogMain');
         }
         return redirect() -> back();
     }
 
-    public function profile(){
-        return view('blog/profile');
+    public function profile(Request $request){
+        $user = ActiveUser::getInstance()->getUser();
+        return view('blog/profile', ['user' => $user]);
     }
 
     public function post(){
-        return view('blog/post');
+        $user = ActiveUser::getInstance()->getUser();
+        return view('blog/post', ['user' => $user]);
     }
     
     public function news(){
-        return view('blog/news');
+        $user = ActiveUser::getInstance()->getUser();
+        return view('blog/news', ['user' => $user]);
+    }
+
+    public function blogMain(){
+        $user = ActiveUser::getInstance()->getUser();
+        return view('blog/blogMain', ['user'=> $user]);
     }
 }

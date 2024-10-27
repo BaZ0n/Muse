@@ -12,7 +12,7 @@
         <h1 class="text-center fs-2 mb-3">Вход</h1> {{-- Вход, информативно не правда ли --}}
 
         <div class="container p-4 mb-5"> {{-- Контейнер для полей и кнопки --}}
-            <form method="post" action="/blogMain">
+            <form method="post" action="/blogMainPost">
                 @csrf
                 {{-- Почта --}}
                 <div class="form-group px-4 pb-1">

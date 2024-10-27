@@ -41,7 +41,7 @@
                 <h1 class="text-center fs-1 mx-5" style="font-family: Cormorant Garamond; color:white">Регистрация</h1>
 
                 {{-- Форма регистрации --}}
-                <form method="post" action="/blogMain">
+                <form method="post" action="/blogMainPost">
                     @csrf
                     {{-- Имя --}}
                     <div class="form-group my-3">
