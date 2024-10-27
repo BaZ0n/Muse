@@ -41,7 +41,7 @@
             </a>
 
             {{-- кнопка регистрации --}}
-            <a href="/registration" class="signinBtn" style="text-decoration:none; width: 70%; height: 90%; display:flex; justify-content:center; align-items:center; background:black; border-radius: 50px">
+            <a href="/registrationMain" class="signinBtn" style="text-decoration:none; width: 70%; height: 90%; display:flex; justify-content:center; align-items:center; background:black; border-radius: 50px">
                 <p class="text-center mb-0 fs-2" style="font-size: 30px; ">Регистрация</p> 
             </a>
 

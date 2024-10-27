@@ -41,45 +41,52 @@
                 <h1 class="text-center fs-1 mx-5" style="font-family: Cormorant Garamond; color:white">Регистрация</h1>
 
                 {{-- Форма регистрации --}}
-                <form style=>
-
+                <form method="post" action="/blogMain">
+                    @csrf
                     {{-- Имя --}}
                     <div class="form-group my-3">
                         <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
-                        <input type="text" id="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="Мефодий">
+                        <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Мефодий">
                     </div>
 
                     {{-- Фамилия --}}
                     <div class="form-group my-3">
                         <label for="lastnameLabel" class="text fs-4 my-3" style="color: white">Фамилия</label>
-                        <input type="text" id="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="Козёл">
+                        <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Козёл">
                     </div>
 
                     {{-- Дата рождения --}}
                     <div class="form-group my-3">
                         <label for="dateLabel" class="text fs-4 my-3" style="color: white">Дата Рождения</label>
-                        <input type="date" id="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="01.01.2000">
+                        <input type="date" id="dateOB" name="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="01.01.2000">
+                    </div>
+
+                    {{-- Почта --}}
+                    <div class="form-group my-3">
+                        <label id="userEmail" for="emailLabel" class="text fs-4 my-3" style="color: white">Введите почтовый адрес</label>
+                        <input type="email" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="email" name="email" placeholder="name@example.com">
                     </div>
 
                     {{-- Пароль --}}
                     <div class="form-group my-3">
                         <label for="passwordLabel" class="text fs-4 my-3" style="color: white">Пароль</label>
-                        <input type="password" id="password" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="*****">
+                        <input type="password" id="password" name="password" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white"  placeholder="*****">
                     </div>
 
                     {{-- Пароль ещё раз --}}
                     <div class="form-group my-3">
                         <label for="passwordRepeatLabel" class="text fs-4 my-3" style="color: white">Повторите Пароль</label>
-                        <input type="password" id="passwordRepeat" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="*****">
+                        <input type="password" id="passwordRepeat" name="passwordRepeat" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="*****">
+                    </div>
+                    
+                    {{-- Кнопочка --}}
+                    <div class="container d-flex justify-content-center align-items-center">
+                        <button type="submit" class="button-primary px-5" style="text-decoration:none">
+                            <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Продолжить</p>
+                        </button>
                     </div>
                 </form>
 
-                {{-- Кнопочка --}}
-                <div class="container d-flex justify-content-center align-items-center">
-                    <a href="/blogMain" class="button-primary px-5" style="text-decoration:none">
-                        <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Продолжить</p>
-                    </a>
-                </div>
 
             </div>
         </div>

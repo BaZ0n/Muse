@@ -1,39 +1,21 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('loginsignin/welcome');
-});
+Route::get('/', [LoginController::class, 'welcome']);
 
-Route::get('/login', function () {
-    return view('loginsignin/login');
-});
+Route::get('/login', [LoginController::class, 'login']);
 
-Route::get('/registration', function () {
-    return view('loginsignin/registration');
-});
+Route::post('/login/check' , [LoginController::class,'login_check']);
 
-Route::get('/registrationCode', function () {
-    return view('loginsignin/registrationCode');
-});
+Route::get('/registrationMain', [LoginController::class, 'registrationMain']);
 
-Route::get('/registrationMain', function () {
-    return view('loginsignin/registrationMain');
-});
+Route::post('/blogMain', [BlogController::class, 'blogMain']);
 
-Route::get('/blogMain', function () {
-    return view('blog/blogMain');
-});
+Route::get('/profile', [BlogController::class, 'profile']);
 
-Route::get('/profile', function () {
-    return view('blog/profile');
-});
+Route::get('/post', [BlogController::class, 'post']);
 
-Route::get('/post', function () {
-    return view('blog/post');
-});
-
-Route::get('/news', function () {
-    return view('blog/news');
-});
+Route::get('/news', [BlogController::class, 'news']);
