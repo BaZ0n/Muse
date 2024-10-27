@@ -68,7 +68,7 @@
             <li id="post" class="postCont">
                 <img class="img w-100" src="images/background.png" alt="Image" id="postImage">
                 <div class="postText py-2">
-                    <h4 id="postTitle">Как писать код быстро и безболезненно?</h4>
+                    <h4 id="postTitle">Как писать код быстро и хуево??</h4>
                     <p id="postContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.</p>
                     <div class="container-fluid">
                         <div class="row">
