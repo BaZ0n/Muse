@@ -4,7 +4,7 @@
     <div class="container align-items-center d-flex justify-content-center" style="margin-left:0">
         <div class="col-8 my-5 mx-5">
             <h1 class="text-center fs-1" style="font-family: Cormorant Garamond; color:white">Профиль</h1>
-            <form method="POST" action="/profile/check">
+            <form method="POST" action="/profile/check" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-3">
                     <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
