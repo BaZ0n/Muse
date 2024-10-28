@@ -38,12 +38,12 @@
                     <label for="newPhotoLabel" class="text fs-4 my-3" style="color: white">Загрузите фотографию</label>
                     <input name="photoFile" type="file" class="form-control fs-5" style="background-color: black; border: 1px solid gray;">
                 </div>
-                
-            </form>
-            <div class="container d-flex justify-content-center align-items-center">
+                <div class="container d-flex justify-content-center align-items-center">
                 <a href="/blogMain" class="button-primary px-5" style="text-decoration:none">
                     <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Сохранить</p>
                 </a>
+            </form>
+            
             </div>
             <a class="exitBtn" href="/">
                 <p class="text-center mt-3 fs-3">Выйти из профиля</p>
