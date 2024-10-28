@@ -27,6 +27,7 @@
 .postText h4, p{
     padding: 0 3%;
     color: var(--white);
+    white-space: pre-line;
 }
 
 .row {
