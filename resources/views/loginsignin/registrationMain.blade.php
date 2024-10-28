@@ -25,8 +25,8 @@
             {{-- Левый столбец --}}
             <div class="col-4">
 
-                <div class="container my-5">
-                    <h2 class="text-center fs-3 my-5" style="color: #FFFFFF">muse.</h2>
+                <div class="container my-5" style="text-align: center">
+                    <a href="/" class="logo fs-3">muse.</a>
                 </div>
             
                 <div class="container my-5">

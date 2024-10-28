@@ -20,7 +20,7 @@
                 {{-- "background-image: url({{asset('images/backgroundCustom1.png')}}); background-size: contain; --}}
                 <div class="container h-auto w-auto" style= "margin-right:0">
                     <div class="container">
-                        <a href="/" class="logo fs-4 mx-4">muse.</a>
+                        <a href="/blogMain" class="logo fs-4 mx-4">muse.</a>
                         <div class="container d-flex" style="justify-content: center; align-items: center; flex-direction: column; color: var(--white)">
                             <img id="userPhoto" src="images/nightmare.jpg" class="rounded-circle mx-4 my-4 d-block w-50 h-50" style="border: 0px solid var(--white)">
                             <h1 id="username" class="text-center fs-1 mt-1">{{$user->name_first}} {{$user->name_last}}</h1>

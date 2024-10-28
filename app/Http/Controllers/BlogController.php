@@ -69,4 +69,9 @@ class BlogController extends Controller
         $user = ActiveUser::getInstance()->getUser();
         return view('blog/blogMain', ['user'=> $user]);
     }
+
+    public function createPost(){
+        $user = ActiveUser::getInstance()->getUser();
+        return view('blog/createPost', ['user'=> $user]);
+    }
 }

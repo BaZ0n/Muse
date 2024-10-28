@@ -21,14 +21,14 @@
             background-size: cover; background-attachment:fixed; background-position:center; font-family: Cormorant Garamond;">
 
     {{-- Лого --}}
-    <div class="container mt-5"> 
-        <h2 class="text-center fs-3" style="color: #FFFFFF">muse.</h2>
+    <div class="container mt-5" style="text-align: center"> 
+        <a href="/" class="logo fs-3">muse.</a>
     </div>
 
     {{-- Заголовок хз --}}
     <div class="container my-5 pb-5"> 
-        <h1 class="text-center" style="font-family: Caravan; font-size: 150px; color: #FACE8D">Каждая идея</h1>
-        <h2 class="text-center" style="color: #FFFFFF; font-size: 50px">это шаг к вдохновению</h2>
+        <h1 class="text-center" style="font-family: Caravan; font-size: 125px; color: #FACE8D">Каждая идея</h1>
+        <h2 class="text-center" style="color: #FFFFFF; font-size: 40px">это шаг к вдохновению</h2>
     </div>
 
     {{-- Кнопки входа и выхода --}}

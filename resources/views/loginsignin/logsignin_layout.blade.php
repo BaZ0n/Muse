@@ -18,8 +18,8 @@
 <body style="background: black; background-image: url({{asset('images/background.png')}}); background-repeat: no-repeat; background-size: cover; background-attachment:fixed; background-position:center; font-family: Cormorant Garamond;">
     
     {{-- Пусть будет шапка (лого) --}}
-    <div class="container mt-4"> 
-        <h2 class="text-center fs-3" style="color: #FFFFFF">muse.</h2>
+    <div class="container mt-4" style="text-align: center"> 
+        <a href="/" class="logo fs-3">muse.</a>
     </div>
 
     {{-- Заголовок --}}

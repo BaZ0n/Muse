@@ -21,3 +21,5 @@ Route::get('/profile', [BlogController::class, 'profile']);
 Route::get('/post', [BlogController::class, 'post']);
 
 Route::get('/news', [BlogController::class, 'news']);
+
+Route::post('/createPost', [BlogController::class, 'createPost']);

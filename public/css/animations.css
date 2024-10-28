@@ -16,6 +16,7 @@
     transition: all 0.2s linear;
     width: auto;
     height: auto;
+    border: 0;
 }
 
 .button-primary:hover {
