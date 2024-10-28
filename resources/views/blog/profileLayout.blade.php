@@ -22,7 +22,7 @@
                     <div class="container">
                         <a href="/blogMain" class="logo fs-4 mx-4">muse.</a>
                         <div class="container d-flex" style="justify-content: center; align-items: center; flex-direction: column; color: var(--white)">
-                            <img id="userPhoto" src="images/avatar/{{$user->avatar}}" class="rounded-circle mx-4 my-4 d-block w-50 h-50" style="border: 0px solid var(--white)">
+                            <img id="userPhoto" src="images/avatar/{{$user->avatar}}" class="rounded-circle mx-4 my-5 d-block" style="border: 0px solid var(--white); width: 250px; height:250px; object-fit: cover">
                             <h1 id="username" class="text-center fs-1 mt-1">{{$user->name_first}} {{$user->name_last}}</h1>
                             <h3 id="status" class="text-center fs-3 mt-2">{{$user->status}}</h3>
                             <hr style="color:gray; width: 100%">

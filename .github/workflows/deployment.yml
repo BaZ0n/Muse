@@ -19,7 +19,7 @@ jobs:
                    echo "Deploying..."
                    git pull origin main
                    php8.3 artisan down
-                   php8.3 composer.phar install --nodev --optimize-autoloader
+                   php8.3 composer.phar install --optimize-autoloader
                    php8.3 artisan migrate --force
                    php8.3 artisan config:cache
                    php8.3 artisan event:cache
