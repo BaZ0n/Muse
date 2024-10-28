@@ -22,4 +22,4 @@ Route::get('/post', [BlogController::class, 'post']);
 
 Route::get('/news', [BlogController::class, 'news']);
 
-Route::post('/createPost', [BlogController::class, 'createPost']);
+Route::get('/createPost', [BlogController::class, 'createPost']);

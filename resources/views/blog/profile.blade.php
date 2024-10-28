@@ -4,27 +4,41 @@
     <div class="container align-items-center d-flex justify-content-center" style="margin-left:0">
         <div class="col-8 my-5 mx-5">
             <h1 class="text-center fs-1" style="font-family: Cormorant Garamond; color:white">Профиль</h1>
-            <form>
+            <form method="POST" action="profile/check">
+                @csrf
                 <div class="form-group my-3">
                     <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
-                    <input type="text" id="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="Мефодий">
+                    <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Мефодий">
                 </div>
                 <div class="form-group my-3">
                     <label for="lastnameLabel" class="text fs-4 my-3" style="color: white">Фамилия</label>
-                    <input type="text" id="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="Козёл">
+                    <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Козёл">
                 </div>
                 <div class="form-group my-3">
                     <label for="dateLabel" class="text fs-4 my-3" style="color: white">Дата Рождения</label>
-                    <input type="date" id="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="01.01.2000">
+                    <input type="date" id="dateOB" name="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="01.01.2000">
                 </div>
                 <div class="form-group my-3">
                     <label for="passwordLabel" class="text fs-4 my-3" style="color: white">Пароль</label>
-                    <input type="password" id="oldPassword" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="*****">
+                    <input type="password" id="oldPassword" name="oldPassword" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="*****">
                 </div>
                 <div class="form-group my-3">
                     <label for="passwordNewLabel" class="text fs-4 my-3" style="color: white">Новый Пароль</label>
-                    <input type="password" id="passwordNew" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="userName" placeholder="*****">
+                    <input type="password" id="passwordNew" name="passwordNew" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="*****">
                 </div>
+                <div class="form-group my-3">
+                    <label for="newStatusLabel" class="text fs-4 my-3" style="color: white">Новый Статус</label>
+                    <input type="text" id="statusNew" name="statusNew" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Здорово и вечно">
+                </div>
+                <div class="form-group my-3">
+                    <label for="newAboutLabel" class="text fs-4 my-3" style="color: white">О себе</label>
+                    <textarea type="text" id="aboutNew" name="aboutNew" class="form-control fs-5" rows="5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Здорово и вечно"></textarea>
+                </div>
+                <div class="form-group my-3">
+                    <label for="newPhotoLabel" class="text fs-4 my-3" style="color: white">Загрузите фотографию</label>
+                    <input name="photoFile" type="file" class="form-control fs-5" style="background-color: black; border: 1px solid gray;">
+                </div>
+                
             </form>
             <div class="container d-flex justify-content-center align-items-center">
                 <a href="/blogMain" class="button-primary px-5" style="text-decoration:none">
