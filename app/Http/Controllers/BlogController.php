@@ -7,7 +7,6 @@ use App\Providers\ActiveUser;
 use DB;
 use Intervention\Image\ImageManager;
 use Request;
-use Intervention\Image\Facades\Image;
 
 
 class BlogController extends Controller
