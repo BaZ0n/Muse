@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Users;
 use App\Providers\ActiveUser;
+use DB;
 use Request;
 
 
@@ -47,6 +48,40 @@ class BlogController extends Controller
         else if ((Request::input('inputPassword') == null) && (Request::input("password") == null)){
             return view('blog/blogMain');
         }
+        return redirect() -> back();
+    }
+
+    public function profile_check(Request $request){
+        $useractive = ActiveUser::getInstance()->getUser();
+        //$users = new Users();
+        // foreach ($users->all() as $user){
+        //     if(($user->email == $useractive->email)&&(Request::input('userName') != null)){
+        //         //$users->update(['name_first' => Request::input('userName') ]) ;
+        //         //dd($users);
+        //         //$users->save();
+
+        //     }
+        // }
+        if (Request::input('userName')!= null){
+            $usersName = DB::table('users')-> where('id', $useractive->id) -> update(['name_first' => Request::input('userName')]);
+        }
+        if (Request::input('userLastName')!= null){
+            $usersLastName = DB::table('users')-> where('id', $useractive->id) -> update(['name_last' => Request::input('userLastName')]);
+        }
+        if (Request::input('dateOB')!= null){
+            $usersDate = DB::table('users')-> where('id', $useractive->id) -> update(['birthdate' => Request::input('dateOB')]);
+        }
+        if ((Request::input('oldPassword')!= null)&&(Request::input('passwordNew')!= null)&&((Request::input('oldPassword'))==$useractive->password)){
+            $usersPass = DB::table('users')-> where('id', $useractive->id) -> update(['password' => Request::input('passwordNew')]);
+        }
+        if (Request::input('statusNew')!= null){
+            $usersStatus = DB::table('users')-> where('id', $useractive->id) -> update(['status' => Request::input('statusNew')]);
+        }
+        if (Request::input('aboutNew')!= null){
+            $usersAbout = DB::table('users')-> where('id', $useractive->id) -> update(['about' => Request::input('aboutNew')]);
+        }
+        $user = Users::find($useractive->id);
+        ActiveUser::getInstance()->setUser($user);
         return redirect() -> back();
     }
 
