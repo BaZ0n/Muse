@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Users;
 use App\Providers\ActiveUser;
 use DB;
+use Intervention\Image\ImageManager;
 use Request;
+use Intervention\Image\Facades\Image;
 
 
 class BlogController extends Controller
@@ -26,11 +28,11 @@ class BlogController extends Controller
                 $users->email = Request::input("email");
                 $users->password = Request::input("password");
                 $users->birthdate = Request::input("dateOB");
+                $users->avatar = "avatarBase/profileImage.png";
                 $users->save();
                 foreach ($users->all() as $user){
                     if($user->email == Request::input("email")){
                         ActiveUser::getInstance()->setUser($user);
-                        //return view('blog/blogMain', ['user' => $user]);
                         return redirect()->action([BlogController::class, 'blogMain']);
                     }
                 }
@@ -40,7 +42,6 @@ class BlogController extends Controller
             foreach ($users->all() as $user){
                 if(($user->email == Request::input("inputEmail"))&&($user->password == Request::input("inputPassword"))){
                     ActiveUser::getInstance()->setUser($user);
-                    //return view('blog/blogMain', ['user' => $user]);
                     return redirect()->action([BlogController::class, 'blogMain']);
                 }
             }
@@ -53,15 +54,6 @@ class BlogController extends Controller
 
     public function profile_check(Request $request){
         $useractive = ActiveUser::getInstance()->getUser();
-        //$users = new Users();
-        // foreach ($users->all() as $user){
-        //     if(($user->email == $useractive->email)&&(Request::input('userName') != null)){
-        //         //$users->update(['name_first' => Request::input('userName') ]) ;
-        //         //dd($users);
-        //         //$users->save();
-
-        //     }
-        // }
         if (Request::input('userName')!= null){
             $usersName = DB::table('users')-> where('id', $useractive->id) -> update(['name_first' => Request::input('userName')]);
         }
@@ -79,6 +71,19 @@ class BlogController extends Controller
         }
         if (Request::input('aboutNew')!= null){
             $usersAbout = DB::table('users')-> where('id', $useractive->id) -> update(['about' => Request::input('aboutNew')]);
+        }
+
+        if (Request::file('photoFile')!= null){
+
+        $imageManager = new ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
+
+            $image = $imageManager->read(Request::file('photoFile'));
+
+            $imageName = time().'-'.Request::file('photoFile')->getClientOriginalName();
+            $destinationPath = public_path('images/avatar/avatarUser/');
+            $image->save($destinationPath.$imageName);
+
+            $usersAvatar = DB::table('users')-> where('id', $useractive->id) -> update(['avatar' => "avatarUser/".$imageName]);
         }
         $user = Users::find($useractive->id);
         ActiveUser::getInstance()->setUser($user);
