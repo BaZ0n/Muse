@@ -98,7 +98,7 @@ class BlogController extends Controller
     public function post($id){
         
         $user = ActiveUser::getInstance()->getUser();
-        $post = DB::table('posts')-> where('id', $id) -> select("*") -> first();
+        $post = DB::table('posts')->leftJoin('users', 'posts.user_id', '=', 'users.id')->where('posts.id', $id)->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last')->first();
         //$userPost = DB::table('user')-> where('id', $post->user_id) -> select("*") -> get();
         //['userPost'=> $userPost]
         return view('blog/post', ['user' => $user], ['post' => $post] );
@@ -106,7 +106,8 @@ class BlogController extends Controller
     
     public function news(){
         $user = ActiveUser::getInstance()->getUser();
-        return view('blog/news', ['user' => $user]);
+        $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
+        return view('blog/news', ['user' => $user], ['posts' => $posts]);
     }
 
     public function blogMain(){

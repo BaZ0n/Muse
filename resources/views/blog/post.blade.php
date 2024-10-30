@@ -13,7 +13,7 @@
                         <h6 id="postDate" class="text-left">{{$post->date_post}}</h6>
                     </div>
                     <div class="col-1">
-                        <h6 id="postAuthor" class="text-left">{{$user->name_first}} {{$user->name_last}}</h6>
+                        <h6 id="postAuthor" class="text-left">{{$post->author_name_first}} {{$post->author_name_last}}</h6>
                     </div>
                 </div>
             </div>
