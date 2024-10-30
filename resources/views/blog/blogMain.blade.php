@@ -11,7 +11,7 @@
 
     {{-- Сторисы --}}
     <div class="container mx-2 px-5 dragscroll" style="overflow-y: hidden; ">
-        <div class="row align-items-center mx-5 px-5" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; width:650px; height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
+        <div class="row align-items-center mx-5 px-5" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
             
             @foreach ($stories as $postStories)
             <div class="col justify-content-center align-items-center">
