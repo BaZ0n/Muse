@@ -20,7 +20,7 @@ Route::get('/profile', [BlogController::class, 'profile']);
 
 Route::post('/profile/check', [BlogController::class,'profile_check']);
 
-Route::get('/post', [BlogController::class, 'post']);
+Route::get('/post/{id}', [BlogController::class, 'post']);
 
 Route::get('/news', [BlogController::class, 'news']);
 

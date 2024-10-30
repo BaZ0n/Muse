@@ -141,7 +141,7 @@
     
     <ul class="posts-container px-5">
         @foreach ($posts as $post)
-        <a class="postRead" href="/post">
+        <a class="postRead" href="/post/{{$post->id}}">
             <li id="post" class="postCont">
                 @if ($post->img_post != null)
                     <img class="img w-100" src="images/post/{{$post->img_post}}" alt="Image" id="postImage">

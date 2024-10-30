@@ -95,9 +95,13 @@ class BlogController extends Controller
         return view('blog/profile', ['user' => $user]);
     }
 
-    public function post(){
+    public function post($id){
+        
         $user = ActiveUser::getInstance()->getUser();
-        return view('blog/post', ['user' => $user]);
+        $post = DB::table('posts')-> where('id', $id) -> select("*") -> first();
+        //$userPost = DB::table('user')-> where('id', $post->user_id) -> select("*") -> get();
+        //['userPost'=> $userPost]
+        return view('blog/post', ['user' => $user], ['post' => $post] );
     }
     
     public function news(){

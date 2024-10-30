@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="css/pagination.css" rel="stylesheet">
-    <link href="css/animations.css" rel="stylesheet">
-    <link href="css/post.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     <title>muse</title>
 </head>
 <body>
@@ -45,6 +45,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/pagination.js"></script>
+    <script src="{{ asset('js/pagination.js') }}"></script>
 </body>
 </html>
