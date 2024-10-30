@@ -25,15 +25,20 @@
     border-top-right-radius: 15px;
 }
 
-.postText h4, p{
+.postText h3, p{
     padding: 0 3%;
     color: var(--white);
     white-space: pre-line;
 }
 
-.row {
-    justify-content: 
-    space-between; 
+.postText h3 {
+    margin-left: 3%;
+}
+
+.bottom-cont {
     color: #828282;
-    align-items: center;
+    flex: 1; 
+    display:flex; 
+    justify-content:space-between;
+    margin: 0 3%;
 }
