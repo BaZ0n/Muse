@@ -132,7 +132,10 @@
     </div> --}}
 
     <div class="container d-flex justify-content-center align-items-center my-5">
-        <a href="/createPost" class="button-primary px-5" style="text-decoration:none">
+        <a href="/createStories" class="button-primary mx-3" style="text-decoration:none">
+            <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Залить сторис</p>
+        </a>
+        <a href="/createPost" class="button-primary mx-3" style="text-decoration:none">
             <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Написать пост</p>
         </a>
     </div> 
