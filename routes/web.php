@@ -25,3 +25,5 @@ Route::get('/post', [BlogController::class, 'post']);
 Route::get('/news', [BlogController::class, 'news']);
 
 Route::get('/createPost', [BlogController::class, 'createPost']);
+
+Route::post('/cratePost/check', [BlogController::class, 'createPost_check']);

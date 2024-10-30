@@ -1,6 +1,7 @@
 .posts-container {
     color:white; 
     font-family:Roboto;
+    min-width: 100%;
     max-width: fit-content;
     padding: 0 5%;
 }

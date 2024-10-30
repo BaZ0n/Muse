@@ -140,45 +140,29 @@
     {{-- Посты --}}
     
     <ul class="posts-container px-5">
-
+        @foreach ($posts as $post)
         <a class="postRead" href="/post">
             <li id="post" class="postCont">
-                <img class="img w-100" src="images/background.png" alt="Image" id="postImage">
+                <img class="img w-100" src="images/post/{{$post->img_post}}" alt="Image" id="postImage">
                 <div class="postText py-2">
-                    <h4 id="postTitle">Как писать код быстро и хуево??</h4>
-                    <p id="postContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.</p>
+                    <h4 id="postTitle">{{$post->title}}</h4>
+                    <p id="postContent">{{$post->content}}</p>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-1">
-                                <h6 id="postDate" class="text-left">21.06.2020</h6>
+                                <h6 id="postDate" class="text-left">{{$post->date_post}}</h6>
                             </div>
-                            <div class="col-1">
-                                <h6 id="postAuthor" class="text-left">Я</h6>
+                            <div class="col-2">
+                                <h6 id="postAuthor" class="text-left">{{$user->name_first}} {{$user->name_last}}</h6>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
         </a>
+        @endforeach
         
-        <a class="postRead" href="/post">
-            <li id="post" class="postCont">
-                <img class="img w-100" src="images/kek.png" alt="Image" id="postImage">
-                <div class="postText py-2">
-                    <h4 id="postTitle">Почему?</h4>
-                    <p id="postContent">Потому.</p>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-1">
-                                <h6 id="postDate" class="text-left">21.06.2020</h6>
-                            </div>
-                            <div class="col-1">
-                                <h6 id="postAuthor" class="text-left">Я</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </a>
+        
+        
     </ul>
 @endsection

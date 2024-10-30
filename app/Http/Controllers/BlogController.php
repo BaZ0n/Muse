@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posts;
 use App\Models\Users;
 use App\Providers\ActiveUser;
 use DB;
@@ -105,8 +106,41 @@ class BlogController extends Controller
     }
 
     public function blogMain(){
+        
         $user = ActiveUser::getInstance()->getUser();
-        return view('blog/blogMain', ['user'=> $user]);
+        $posts = DB::table('posts')-> where('user_id', $user->id) -> select("*") -> get();
+        return view('blog/blogMain', ['user'=> $user], ['posts' => $posts]);
+    }
+
+
+    public function createPost_check(Request $request){
+        $user = ActiveUser::getInstance()->getUser();
+        $posts = new Posts();
+        
+        if ((Request::input("title") != null)&&(Request::input("postContent") != null)){
+            $posts->user_id = $user->id;
+            $posts->date_post = date("d.m.Y");
+            $posts->title = Request::input("title");
+            $posts->content = Request::input("postContent");
+
+            
+            if (Request::file('photoPostFile')!= null){
+
+                $imagePostManager = new ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
+        
+                    $imagePost = $imagePostManager->read(Request::file('photoPostFile'));
+        
+                    $imagePostName = time().'-'.Request::file('photoPostFile')->getClientOriginalName();
+                    $destinationPostPath = public_path('images/post/');
+                    $imagePost->save($destinationPostPath.$imagePostName);
+
+                    $posts->img_post = $imagePostName;
+            }
+            
+            $posts->save();    
+        }
+        return redirect()->action([BlogController::class, 'blogMain']);
+
     }
 
     public function createPost(){

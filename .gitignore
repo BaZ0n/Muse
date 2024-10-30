@@ -20,4 +20,5 @@ yarn-error.log
 /.vscode
 /.zed
 /public/images/avatar/avatarUser
+/public/images/post
 public_html
