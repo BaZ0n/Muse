@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const content = document.querySelector('.posts-container'); 
-    const itemsPerPage = 2; // set number of items per page
+    const itemsPerPage = 5; // set number of items per page
     let currentPage = 0;
     const items = Array.from(content.getElementsByTagName('li')).slice(0);
   
