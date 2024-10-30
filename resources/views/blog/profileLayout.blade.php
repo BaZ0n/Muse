@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     <title>muse</title>
 </head>
-<body>
-    <div class="container-fluid" style="background-image: url({{asset('images/m1000x1000.jpg')}}); background-size: cover;  ">
+<body style="background-image: url({{asset('images/m1000x1000.jpg')}}); background-size: cover;">
+    <div class="container-fluid">
         <div class="row align-items-start" style="justify-content: space-between">
-            <div class="col align-self-start" style="width:fit-content; padding-left:0">
+            <div class="col" style="width:fit-content; padding-left:0">
                 {{-- "background-image: url({{asset('images/backgroundCustom1.png')}}); background-size: contain; --}}
                 <div class="container h-auto w-auto" style= "margin-right:0">
                     <div class="container">
@@ -33,7 +33,7 @@
                 </div> 
             </div>
             
-            <div class="col align-self-end" style="margin-left: 2%; margin-right: 2%; width:fit-content;">
+            <div class="col" style="margin-left: 2%; margin-right: 2%; width:fit-content;">
                 <div class="header d-flex align-items-center my-4" style="justify-content: center; align-items: center; max-width:fit-content">
                     <a href="/blogMain">Главная</a>
                     <a href="/profile">Профиль</a>
