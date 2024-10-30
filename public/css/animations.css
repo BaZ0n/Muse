@@ -61,7 +61,7 @@
 
 .stories:hover{
     box-shadow: 0 0 15px var(--primary-color);
-    transform: scale(1.2);
+    transform: scale(1.0);
 }
 
 .logo {

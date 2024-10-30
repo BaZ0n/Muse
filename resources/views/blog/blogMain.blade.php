@@ -15,7 +15,6 @@
             
             @foreach ($stories as $postStories)
             <div class="col justify-content-center align-items-center">
-                <a class="storiesOpen" style="border-radius: 10px">
                     <div class="stories" style="position: relative">
                         <img src="images/post/{{$postStories->img_post}}" alt="stories1" class="img" style="width:200px; height:300px; object-fit:cover; border-radius:10px">
                         <div class="container" style="border-radius: 10px; position: absolute; top:0; left:0; background: linear-gradient(rgba(0, 0, 0, 0.8), 50%, rgba(0, 0, 0, 0))">
@@ -24,9 +23,7 @@
                         <div class="container" style="border-radius: 10px; position: absolute; bottom:0; right:0; background: linear-gradient(rgba(0, 0, 0, 0), 60%, rgba(0, 0, 0, 0.8))">
                             <p id="storiesDate1" class="text my-3" style="color:white;">{{$postStories->date_post}}</p>
                         </div>
-                    </div>
-                </a>
-                
+                    </div>     
             </div>
             
             @endforeach
