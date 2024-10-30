@@ -98,7 +98,7 @@ class BlogController extends Controller
     public function post($id){
         
         $user = ActiveUser::getInstance()->getUser();
-        $post = DB::table('posts')->leftJoin('users', 'posts.user_id', '=', 'users.id')->where('posts.id', $id)->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last')->first();
+        $post = DB::table('posts')->leftJoin('users', 'posts.user_id', '=', 'users.id') -> where( 'posts.stories', 0) ->where('posts.id', $id) ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last')->first();
         //$userPost = DB::table('user')-> where('id', $post->user_id) -> select("*") -> get();
         //['userPost'=> $userPost]
         return view('blog/post', ['user' => $user], ['post' => $post] );
@@ -106,15 +106,17 @@ class BlogController extends Controller
     
     public function news(){
         $user = ActiveUser::getInstance()->getUser();
-        $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
+        $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->where('posts.stories', 0) ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
         return view('blog/news', ['user' => $user], ['posts' => $posts]);
     }
 
     public function blogMain(){
         
         $user = ActiveUser::getInstance()->getUser();
-        $posts = DB::table('posts')-> where('user_id', $user->id) -> select("*") -> get();
-        return view('blog/blogMain', ['user'=> $user], ['posts' => $posts]);
+        $posts = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 0) -> select("*") -> get();
+        
+        $stories = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 1) -> select("*") -> get();
+        return view('blog/blogMain', ['user'=> $user, 'posts' => $posts, 'stories'=> $stories]);
     }
 
 
@@ -127,6 +129,7 @@ class BlogController extends Controller
             $posts->date_post = date("d.m.Y");
             $posts->title = Request::input("title");
             $posts->content = Request::input("postContent");
+            
 
             
             if (Request::file('photoPostFile')!= null){
@@ -151,6 +154,33 @@ class BlogController extends Controller
     public function createPost(){
         $user = ActiveUser::getInstance()->getUser();
         return view('blog/createPost', ['user'=> $user]);
+    }
+
+    public function createStories_check(){
+        $user = ActiveUser::getInstance()->getUser();
+        $posts = new Posts();
+
+        if ((Request::input("titleStories") != null)&&(Request::file('photoStoriesFile')!= null)){
+            $posts->user_id = $user->id;
+            $posts->date_post = date("d.m.Y");
+            $posts->title = Request::input("titleStories");
+            $posts->content = "";
+            $posts->stories = true;
+
+            $imageStoriesManager = new ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
+        
+            $imageStories = $imageStoriesManager->read(Request::file('photoStoriesFile'));
+        
+            $imageStoriesName = time().'-'.Request::file('photoStoriesFile')->getClientOriginalName();
+            $destinationStorisePath = public_path('images/post/');
+            $imageStories->save($destinationStorisePath.$imageStoriesName);
+
+            $posts->img_post = $imageStoriesName;
+            
+            $posts->save();    
+        }
+        return redirect()->action([BlogController::class, 'blogMain']);
+
     }
 
     public function createStories(){
