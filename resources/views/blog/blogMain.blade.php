@@ -4,8 +4,8 @@
 
     {{-- Поиск --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%">
-            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
+        <div class="input-group mx-5" style="background: white; border-radius:50px; min-width: 150%;">
+            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:black;">
         </div>
     </div>
 
@@ -13,7 +13,7 @@
     <div class="container mx-2 px-5" style="overflow-y: hidden;">
         <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
             <a href="/createStories" class="storiesBtn" style="text-decoration:none; width: fit-content; height:fit-content;">
-                <img src="{{ asset('images/plus-icon.png') }}" style="width: 75px; height:75px;">
+                <img src="{{ asset('images/plus-icon.png') }}" style="width: 50px; height:50px;">
             </a>
 
             @foreach ($stories as $postStories)

@@ -114,3 +114,12 @@
 .signinBtn p:hover {
     color: var(--primary-color);;
 }
+
+.form-control {
+    transition: all 0.2s linear;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
