@@ -63,7 +63,7 @@
                     <img class="img w-100" src="images/post/{{$post->img_post}}" alt="Image" id="postImage">
                     <div class="postText py-2">
                         <h3 id="postTitle">{{$post->title}}</h4>
-                        <p id="postContent">{{$post->content}}</p>
+                        <p id="postContent">{!! Str::limit($post->content, 255, '...') !!}</p>
                         <div class="bottom-cont">
                             <h6 id="postDate" class="text">{{$post->date_post}}</h6>
                             <h6 id="postAuthor" class="text">{{$user->name_first}} {{$user->name_last}}</h6>
@@ -72,7 +72,7 @@
                 @else
                     <div class="postText py-2" style="border-radius: 15px">
                         <h3 id="postTitle">{{$post->title}}</h4>
-                        <p id="postContent">{{$post->content}}</p>
+                        <p id="postContent">{!! Str::limit($post->content, 255, '...') !!}</p>
                         <div class="bottom-cont">
                             <h6 id="postDate" class="text">{{$post->date_post}}</h6>
                             <h6 id="postAuthor" class="text">{{$user->name_first}} {{$user->name_last}}</h6>
