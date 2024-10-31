@@ -158,10 +158,15 @@ class BlogController extends Controller
         $user = ActiveUser::getInstance()->getUser();
         $posts = new Posts();
 
-        if ((Request::input("titleStories") != null)&&(Request::file('photoStoriesFile')!= null)){
+        if ((Request::file('photoStoriesFile')!= null)){
             $posts->user_id = $user->id;
             $posts->date_post = date("d.m.Y");
-            $posts->title = Request::input("titleStories");
+            if (Request::input("titleStories") != null){
+                $posts->title = Request::input("titleStories");
+            }
+            else {
+                $posts->title = "";
+            }
             $posts->content = "";
             $posts->stories = true;
 
