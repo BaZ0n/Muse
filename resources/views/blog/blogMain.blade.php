@@ -10,12 +10,15 @@
     </div>
 
     {{-- Сторисы --}}
-    <div class="container mx-2 px-5 dragscroll" style="overflow-y: hidden; ">
-        <div class="row align-items-center mx-5 px-5" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
-            
+    <div class="container mx-2 px-5" style="overflow-y: hidden;">
+        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
+            <a href="/createStories" class="storiesBtn" style="text-decoration:none; width: fit-content; height:fit-content;">
+                <img src="{{ asset('images/plus-icon.png') }}" style="width: 100px; height:100px;">
+            </a>
+
             @foreach ($stories as $postStories)
-            <div class="col justify-content-center align-items-center my-5">
-                <a class="storiesOpen" style="border-radius: 10px">
+            <div class="col my-5" style="width: fit-content">
+                <a href="/post/{{$postStories->id}}" class="storiesOpen" style="border-radius: 10px">
                     <div class="stories" style="position: relative">
                         <img src="images/post/{{$postStories->img_post}}" alt="stories1" class="img" style="width:200px; height:300px; object-fit:cover; border-radius:10px">
                         <div class="container" style="border-radius: 10px; position: absolute; top:0; left:0; background: linear-gradient(rgba(0, 0, 0, 0.8), 50%, rgba(0, 0, 0, 0))">
@@ -26,7 +29,6 @@
                         </div>
                     </div>
                 </a>
-                
             </div>
             
             @endforeach
@@ -46,9 +48,6 @@
     </div> --}}
 
     <div class="container d-flex justify-content-center align-items-center my-5">
-        <a href="/createStories" class="button-primary mx-3" style="text-decoration:none">
-            <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Залить сторис</p>
-        </a>
         <a href="/createPost" class="button-primary mx-3" style="text-decoration:none">
             <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Написать пост</p>
         </a>
