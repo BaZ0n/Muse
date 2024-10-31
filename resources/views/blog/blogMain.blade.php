@@ -13,7 +13,7 @@
     <div class="container mx-2 px-5" style="overflow-y: hidden;">
         <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
             <a href="/createStories" class="storiesBtn" style="text-decoration:none; width: fit-content; height:fit-content;">
-                <img src="{{ asset('images/plus-icon.png') }}" style="width: 100px; height:100px;">
+                <img src="{{ asset('images/plus-icon.png') }}" style="width: 75px; height:75px;">
             </a>
 
             @foreach ($stories as $postStories)
