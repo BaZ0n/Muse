@@ -8,15 +8,15 @@
                 @csrf
                 <div class="form-group my-3">
                     <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
-                    <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Мефодий">
+                    <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="{{$user->name_first}}">
                 </div>
                 <div class="form-group my-3">
                     <label for="lastnameLabel" class="text fs-4 my-3" style="color: white">Фамилия</label>
-                    <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Козёл">
+                    <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="{{$user->name_last}}">
                 </div>
                 <div class="form-group my-3">
                     <label for="dateLabel" class="text fs-4 my-3" style="color: white">Дата Рождения</label>
-                    <input type="date" id="dateOB" name="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="01.01.2000">
+                    <input type="date" id="dateOB" name="dateOB" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="{{$user->birthdate}}">
                 </div>
                 <div class="form-group my-3">
                     <label for="passwordLabel" class="text fs-4 my-3" style="color: white">Пароль</label>
@@ -28,11 +28,11 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="newStatusLabel" class="text fs-4 my-3" style="color: white">Новый Статус</label>
-                    <input type="text" id="statusNew" name="statusNew" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Здорово и вечно">
+                    <input type="text" id="statusNew" name="statusNew" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="{{$user->status}}">
                 </div>
                 <div class="form-group my-3">
                     <label for="newAboutLabel" class="text fs-4 my-3" style="color: white">О себе</label>
-                    <textarea type="text" id="aboutNew" name="aboutNew" class="form-control fs-5" rows="5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Здорово и вечно"></textarea>
+                    <textarea type="text" id="aboutNew" name="aboutNew" class="form-control fs-5" rows="5" style="background-color: black; border: 1px solid gray; color: white" placeholder="{{$user->about}}"></textarea>
                 </div>
                 <div class="form-group my-3">
                     <label for="newPhotoLabel" class="text fs-4 my-3" style="color: white">Загрузите фотографию</label>
