@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     <title>muse</title>
 </head>
-<body style="background-image: url({{asset('images/bbgg.png')}}); background-color: black">
+<body style="background-image: url({{asset('images/testBG.png')}}); background-size:cover; background-color: #253430">
     <div class="container-fluid">
         <div class="row align-items-start" style="justify-content: space-between">
             <div class="col" style="width:fit-content; padding-left:0">
