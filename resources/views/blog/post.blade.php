@@ -14,7 +14,7 @@
             <div class="container mb-5 mx-3">
                 <div class="bottom-cont">
                     <h6 id="postDate" class="text fs-5">{{$post->date_post}}</h6>
-                    <h6 id="postAuthor" class="text fs-5">{{$user->name_first}} {{$user->name_last}}</h6>
+                    <h6 id="postAuthor" class="text fs-5">{{$post->author_name_first}} {{$post->author_name_last}}</h6>
                 </div>
             </div>
         </div>
