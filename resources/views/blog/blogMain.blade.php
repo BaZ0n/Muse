@@ -5,7 +5,7 @@
     {{-- Поиск --}}
     <div class="searchBarContainer mx-2 my-5 px-5" style="max-width: fit-content;">
         <form method="GET"  action="blogMain">
-            <div class="input-group mx-4" style="background: #121212; border-radius:50px; min-width: 718px; max padding-left:10px">
+            <div class="input-group mx-4" style="background: #121212; border-radius:50px; min-width: 690px; max padding-left:10px">
                 @csrf
                 <input id="searchBar" name="searchBar" type="text" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
                 <button type="submit" class="searchBTN" style="padding-right:20px; background-color:transparent; border: 0">
@@ -45,7 +45,7 @@
     {{-- Панель для написания постов --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
         <a href="/createPost" class="barBtn" style="text-decoration:transparent">
-            <div class="container mx-3" style="background: #121212; border-radius:50px; min-width: 740px; display:flex; justify-content:space-between">
+            <div class="container mx-3" style="background: #121212; border-radius:50px; min-width: 720px; display:flex; justify-content:space-between">
                 {{-- <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
                     aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;"> --}}
                 <p class="text fs-3 my-2 px-3">Напишите что-нибудь</p>

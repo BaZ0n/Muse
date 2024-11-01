@@ -5,7 +5,7 @@
     {{-- Поиск --}}
     <div class="searchBarContainer mx-2 my-5 px-5" style="max-width: fit-content;">
         <form method="GET"  action="news">
-            <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 143%; padding-left:10px">
+            <div class="input-group mx-3" style="background: #121212; border-radius:50px; min-width: 720px; padding-left:10px">
                 @csrf
                 <input id="searchBar" name="searchBar" type="text" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
                 <button type="submit" class="searchBTN" style="padding-right:20px; background-color:transparent; border: 0">
