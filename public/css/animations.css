@@ -127,5 +127,22 @@
 }
 
 .form-control::placeholder {
-    color: var(--textGray);
-  }
+    color: rgba(210, 210, 210, 0.3);
+}
+
+.row::-webkit-scrollbar {
+    height: 5px; 
+}
+
+.row::-webkit-scrollbar-track {
+    background-color: #08080800
+}
+
+.row::-webkit-scrollbar-track:hover {
+    background-color: #3131314f
+}
+
+.row::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Цвет бегунка */
+    border-radius: 20px; /* Округление бегунка */
+}

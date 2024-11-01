@@ -4,14 +4,14 @@
 
     {{-- Поиск --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:5px">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:10px">
             <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
         </div>
     </div>
 
     {{-- Сторисы --}}
     <div class="container mx-2 px-5" style="overflow-y: hidden;">
-        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:650px; max-height:400px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
+        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:732px; max-height:420px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
             <a href="/createStories" class="storiesBtn" style="text-decoration:none; width: fit-content; height:fit-content;">
                 <img src="{{ asset('images/plus-icon.png') }}" style="width: 50px; height:50px;">
             </a>
@@ -41,6 +41,7 @@
         <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width:130%">
             <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
                 aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
+            {{-- <p class="text fs-3 my-2 px-3">Напишите пост</p> --}}
             <a href="/createPost" class="barBtn"><img src="images/sendBTN.png" class="image mx-2 my-2"></a>
             
         </div>
