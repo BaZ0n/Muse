@@ -15,7 +15,7 @@
             </div>
             <div class="container d-flex justify-content-center align-items-center">
             <button type="submit" class="button-primary px-5 my-3" style="text-decoration:none">
-                <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Сохранить</p>
+                <p class="text-center my-2 mx-5 px-5 py-2 fs-4" style="color: black;">Сохранить</p>
             </button>
         </form>
     </div>

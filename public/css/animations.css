@@ -172,3 +172,7 @@
     background-color: var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
 }
+
+.barBtn .container {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.45);
+}

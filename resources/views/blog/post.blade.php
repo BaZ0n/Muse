@@ -17,7 +17,7 @@
                 </div>
                 <h2 id="postTitle" class="text-center fs-2 mb-4">{{$post->title}}</h2>
                 @if($post->img_post != null)
-                    <img class="img w-100" src="{{ asset('images/post/' . $post->img_post) }}" alt="Image" id="postImage" style="object-fit:cover; max-height:60%; object-fit:cover; width:100%">
+                    <img class="img w-100" src="{{ asset('images/post/' . $post->img_post) }}" alt="Image" id="postImage" style="object-fit:contain; max-height:60%; object-fit:cover; width:100%">
                 @endif
                 <p class="text px-4 py-3 fs-4" >{{$post->content}}</p>
             </div>
