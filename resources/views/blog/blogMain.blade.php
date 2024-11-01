@@ -3,12 +3,12 @@
 @section("main_content")
 
     {{-- Поиск --}}
-    <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
+    <div class="searchBarContainer mx-2 my-5 px-5" style="max-width: fit-content;">
         <form method="GET"  action="blogMain">
             <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 130%; padding-left:10px">
                 @csrf
                 <input id="searchBar" name="searchBar" type="text" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
-                <button type="submit" style="padding-right:20px">
+                <button type="submit" class="searchBTN" style="padding-right:20px; background-color:transparent; border: 0">
                     <img src="{{ asset('images/search_icon.png') }}" class="image mx-2 my-2" style="width: 30.63px; height:31px">
                 </button>
             </div>
@@ -44,13 +44,15 @@
 
     {{-- Панель для написания постов --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width:130%">
-            <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
-                aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
-            {{-- <p class="text fs-3 my-2 px-3">Напишите пост</p> --}}
-            <a href="/createPost" class="barBtn"><img src="images/newPostIcon.png" class="image mx-2 my-2"></a>
-            
-        </div>
+        <a href="/createPost" class="barBtn" style="text-decoration:transparent">
+            <div class="container mx-5" style="background: #121212; border-radius:50px; min-width:145%; display:flex; justify-content:space-between">
+                {{-- <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
+                    aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;"> --}}
+                <p class="text fs-3 my-2 px-3">Напишите что-нибудь</p>
+                <img src="images/newPostIcon.png" class="image mx-2 my-2" style="border-radius: 50%">
+                
+            </div>
+        </a>
     </div>
 
     {{-- Посты --}}
@@ -63,7 +65,7 @@
                     <img class="img w-100" src="images/post/{{$post->img_post}}" alt="Image" id="postImage">
                     <div class="postText py-2">
                         <h3 id="postTitle">{{$post->title}}</h4>
-                        <p id="postContent">{!! Str::limit($post->content, 255, '...') !!}</p>
+                        <p id="postContent" class="text text-truncate">{!! Str::limit($post->content, 255, '...') !!}</p>
                         <div class="bottom-cont">
                             <h6 id="postDate" class="text">{{$post->date_post}}</h6>
                             <h6 id="postAuthor" class="text">{{$user->name_first}} {{$user->name_last}}</h6>
@@ -72,7 +74,7 @@
                 @else
                     <div class="postText py-2" style="border-radius: 15px">
                         <h3 id="postTitle">{{$post->title}}</h4>
-                        <p id="postContent">{!! Str::limit($post->content, 255, '...') !!}</p>
+                        <p id="postContent" class="text-truncate">{!! Str::limit($post->content, 255, '...') !!}</p>
                         <div class="bottom-cont">
                             <h6 id="postDate" class="text">{{$post->date_post}}</h6>
                             <h6 id="postAuthor" class="text">{{$user->name_first}} {{$user->name_last}}</h6>

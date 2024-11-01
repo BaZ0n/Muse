@@ -46,13 +46,13 @@
                     {{-- Имя --}}
                     <div class="form-group my-3">
                         <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
-                        <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Мефодий">
+                        <input type="text" id="userName" name="userName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Иван">
                     </div>
 
                     {{-- Фамилия --}}
                     <div class="form-group my-3">
                         <label for="lastnameLabel" class="text fs-4 my-3" style="color: white">Фамилия</label>
-                        <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Козёл">
+                        <input type="text" id="userLastName" name="userLastName" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="Иванов">
                     </div>
 
                     {{-- Дата рождения --}}

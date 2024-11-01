@@ -86,10 +86,21 @@
     color: var(--primary-color);
 }
 
-.barBtn :hover{
-    box-shadow: 0 0 10px var(--primary-color);
+.barBtn img, p {
+    transition: all .2s linear;
+}
+
+.barBtn .container:hover img {
+    box-shadow: 0 0 5px var(--primary-color);
     border-radius: 50%;
-    transform: scale(1.1);
+} 
+
+.barBtn p {
+    color:rgba(210, 210, 210, 0.3);
+}
+
+.barBtn .container:hover p {
+    color: var(--primary-color)
 }
 
 .btn-container {
@@ -145,4 +156,19 @@
 .row::-webkit-scrollbar-thumb {
     background-color: var(--primary-color); /* Цвет бегунка */
     border-radius: 20px; /* Округление бегунка */
+}
+
+.searchBarContainer .input-group {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.45);
+}
+
+.postBTN .img {
+    background-color: white; 
+    border-radius:50%;
+    transition: all .2s linear;
+}
+
+.postBTN .img:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
 }
