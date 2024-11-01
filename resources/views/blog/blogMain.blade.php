@@ -4,8 +4,11 @@
 
     {{-- Поиск --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:10px">
-            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 130%; padding-left:10px">
+            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
+            <a href="#" style="padding-right:20px">
+                <img src="{{ asset('images/search_icon.png') }}" class="image mx-2 my-2" style="width: 30.63px; height:31px">
+            </a>
         </div>
     </div>
 
@@ -42,7 +45,7 @@
             <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
                 aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
             {{-- <p class="text fs-3 my-2 px-3">Напишите пост</p> --}}
-            <a href="/createPost" class="barBtn"><img src="images/sendBTN.png" class="image mx-2 my-2"></a>
+            <a href="/createPost" class="barBtn"><img src="images/newPostIcon.png" class="image mx-2 my-2"></a>
             
         </div>
     </div>
