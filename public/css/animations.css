@@ -116,10 +116,16 @@
 }
 
 .form-control {
-    transition: all 0.2s linear;
+    transition: 0;
+    /* box-shadow: 0 3px 10px black; */
+    box-shadow: 0 0 0 black;
 }
 
 .form-control:focus {
-    box-shadow: 0 0 15px var(--primary-color);
+    /* box-shadow: 0 3px 1px black; */
+    box-shadow: 0 0 0 black;
 }
 
+.form-control::placeholder {
+    color: var(--textGray);
+  }

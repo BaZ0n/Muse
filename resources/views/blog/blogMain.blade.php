@@ -4,8 +4,8 @@
 
     {{-- Поиск --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: white; border-radius:50px; min-width: 150%;">
-            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:black;">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:5px">
+            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
         </div>
     </div>
 
@@ -18,7 +18,7 @@
 
             @foreach ($stories as $postStories)
             <div class="col my-5" style="width: fit-content">
-                <a href="/post/{{$postStories->id}}" class="storiesOpen" style="border-radius: 10px">
+                <a href="/post/{{$postStories->id}}" class="storiesOpen" style="border-radius: 10px;">
                     <div class="stories" style="position: relative">
                         <img src="images/post/{{$postStories->img_post}}" alt="stories1" class="img" style="width:200px; height:300px; object-fit:cover; border-radius:10px">
                         <div class="container" style="border-radius: 10px; position: absolute; top:0; left:0; background: linear-gradient(rgba(0, 0, 0, 0.8), 50%, rgba(0, 0, 0, 0))">
@@ -37,21 +37,14 @@
     </div>
 
     {{-- Панель для написания постов --}}
-    {{-- <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width:110%">
+    <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
+        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width:130%">
             <input id="newPost" type="newPost" class="form-control fs-3" placeholder="Напишите что-нибудь" aria-label="newPost" 
                 aria-describedby="newPost-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
-            <a href="#" class="barBtn"> <img src="images/photoBTN.png" class="image mx-2 my-2"></a>
-            <a href="#" class="barBtn"><img src="images/sendBTN.png" class="image mx-2 my-2"></a>
+            <a href="/createPost" class="barBtn"><img src="images/sendBTN.png" class="image mx-2 my-2"></a>
             
         </div>
-    </div> --}}
-
-    <div class="container d-flex justify-content-center align-items-center my-5">
-        <a href="/createPost" class="button-primary mx-3" style="text-decoration:none">
-            <p class="text-center my-3 mx-5 px-5 py-2 fs-4" style="color: black;">Написать пост</p>
-        </a>
-    </div> 
+    </div>
 
     {{-- Посты --}}
     
