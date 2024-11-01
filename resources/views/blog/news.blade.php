@@ -4,9 +4,15 @@
 
     {{-- Поиск --}}
     <div class="container mx-2 my-5 px-5" style="max-width: fit-content;">
-        <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:10px">
-            <input id="searchBar" type="search" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="background: transparent; border:0; border-radius:50px; color:white;">
-        </div>
+        <form method="GET"  action="news">
+            <div class="input-group mx-5" style="background: #121212; border-radius:50px; min-width: 150%; padding-left:10px">
+                @csrf
+                <input id="searchBar" name="searchBar" type="text" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
+                <button type="submit" style="padding-right:20px">
+                    <img src="{{ asset('images/search_icon.png') }}" class="image mx-2 my-2" style="width: 30.63px; height:31px">
+                </button>
+            </div>
+        </form>
     </div>
 
     <ul class="posts-container w-auto px-5 my-3" style="color:white; font-family:Roboto">

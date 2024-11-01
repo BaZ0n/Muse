@@ -9,7 +9,6 @@ use DB;
 use Intervention\Image\ImageManager;
 use Request;
 
-
 class BlogController extends Controller
 {
     
@@ -102,16 +101,33 @@ class BlogController extends Controller
         return view('blog/post', ['user' => $user], ['post' => $post] );
     }
     
-    public function news(){
+    public function news(Request $request){
         $user = ActiveUser::getInstance()->getUser();
-        $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->where('posts.stories', 0) ->orderBy('created_at', 'desc') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
+
+        $searchBar = Request::input('searchBar');
+
+        if ($searchBar !== null && !empty($searchBar)){
+            
+            $posts = DB::table('posts')->join('users', 'posts.user_id', '=', 'users.id')-> where( 'posts.stories', 0) -> where('title', 'like', '%' . $searchBar . '%') ->orderBy('created_at', 'desc') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last')  -> get();
+        }
+        else{
+            $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->where('posts.stories', 0) ->orderBy('created_at', 'desc') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
+        }
         return view('blog/news', ['user' => $user], ['posts' => $posts]);
     }
 
-    public function blogMain(){
-        
+    public function blogMain(Request $request){
         $user = ActiveUser::getInstance()->getUser();
-        $posts = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 0) ->orderBy('created_at', 'desc') -> select("*")  -> get();
+
+        $searchBar = Request::input('searchBar');
+
+        if ($searchBar !== null && !empty($searchBar)){
+            $posts = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 0) -> where('title', 'like', '%' . $searchBar . '%') ->orderBy('created_at', 'desc') -> select("*")  -> get();
+        }
+        else{
+            $posts = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 0) ->orderBy('created_at', 'desc') -> select("*")  -> get();
+        }
+        
         
         $stories = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 1) ->orderBy('created_at', 'desc') -> select("*") -> get();
         return view('blog/blogMain', ['user'=> $user, 'posts' => $posts, 'stories'=> $stories]);
