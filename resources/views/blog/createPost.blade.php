@@ -2,7 +2,7 @@
 
 @section("main_content")
 <div class="container my-5 px-5" style="color:white; font-family:Roboto; margin-left:0%">
-    <div class="container mx-3 px-5 my-5" style="background-color: #202020; border-radius: 5px;">
+    <div class="container mx-3 px-5 my-5" style="background-color: #141615; border-radius: 5px;">
         <form method="POST" action="createPost/check" enctype="multipart/form-data">
             @csrf
             <div class="form-group my-3 px-3">
