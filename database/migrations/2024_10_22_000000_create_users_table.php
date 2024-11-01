@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('birthdate');
             $table->string('avatar')->nullable();
             $table->text('about')->nullable();
+            $table->boolean('admin')->default(false);
             $table->string('status')->nullable();
             $table->rememberToken();
             $table->timestamps();

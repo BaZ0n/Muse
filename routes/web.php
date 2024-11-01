@@ -22,6 +22,8 @@ Route::post('/profile/check', [BlogController::class,'profile_check']);
 
 Route::get('/post/{id}', [BlogController::class, 'post']);
 
+Route::get('/post/del/{id}', [BlogController::class, 'post_del']);
+
 Route::get('/news', [BlogController::class, 'news']);
 
 Route::get('/createPost', [BlogController::class, 'createPost']);

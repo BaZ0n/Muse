@@ -9,9 +9,11 @@
                     <a href="/blogMain" class="postBTN">
                         <img src="{{asset('images/iconBack.png')}}" class="img mx-4 px-2 py-2">
                     </a>
-                    <a href="/blogMain" class="postBTN">
-                        <img src="{{asset('images/deleteBTN.png')}}" class="img mx-4 px-2 py-2" style="width:38px; height:36px">
-                    </a>
+                    @if($user->admin == true)
+                        <a href="/post/del/{{$post->id}}" class="postBTN">
+                            <img src="{{asset('images/deleteBTN.png')}}" class="img mx-4 px-2 py-2" style="width:38px; height:36px">
+                        </a>
+                    @endif
                 </div>
                 <h2 id="postTitle" class="text-center fs-2">{{$post->title}}</h2>
                 @if($post->img_post != null)

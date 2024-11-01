@@ -100,6 +100,12 @@ class BlogController extends Controller
         $post = DB::table('posts')->leftJoin('users', 'posts.user_id', '=', 'users.id') ->where('posts.id', $id) ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last')->first();
         return view('blog/post', ['user' => $user], ['post' => $post] );
     }
+
+    public function post_del($id){
+
+        DB::table('posts')->where('id', $id)->delete();
+        return redirect()->action([BlogController::class, 'blogMain']);
+    }
     
     public function news(Request $request){
         $user = ActiveUser::getInstance()->getUser();
