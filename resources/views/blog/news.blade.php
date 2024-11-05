@@ -7,7 +7,7 @@
         <form method="GET"  action="news">
             <div class="input-group mx-3" style="background: #121212; border-radius:50px; min-width: 720px; padding-left:10px">
                 @csrf
-                <input id="searchBar" name="searchBar" type="text" class="form-control fs-3" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
+                <input id="searchBar" name="searchBar" type="text" class="form-control fs-3 mx-4" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
                 <button type="submit" class="searchBTN" style="padding-right:20px; background-color:transparent; border: 0">
                     <img src="{{ asset('images/search_icon.png') }}" class="image mx-2 my-2" style="width: 30.63px; height:31px">
                 </button>

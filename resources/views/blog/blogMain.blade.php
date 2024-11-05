@@ -7,7 +7,7 @@
         <form method="GET"  action="blogMain">
             <div class="input-group mx-4" style="background: #121212; border-radius:50px; min-width: 690px; max padding-left:10px">
                 @csrf
-                <input id="searchBar" name="searchBar" type="text" class="form-control fs-3 mx-2" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
+                <input id="searchBar" name="searchBar" type="text" class="form-control fs-3 mx-4" placeholder="Поиск" aria-label="Search" aria-describedby="search-addon" style="padding-right:0; background: transparent; border:0; border-radius:50px; color:white;">
                 <button type="submit" class="searchBTN" style="padding-right:20px; background-color:transparent; border: 0">
                     <img src="{{ asset('images/search_icon.png') }}" class="image mx-2 my-2" style="width: 30.63px; height:31px">
                 </button>
@@ -16,8 +16,8 @@
     </div>
 
     {{-- Сторисы --}}
-    <div class="container mx-2 px-5" style="overflow-y: hidden;">
-        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:732px; max-height:420px;">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
+    <div class="container mx-2 px-5" style="overflow-y: hidden">
+        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:732px; max-height:420px; min-height: 150px">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
             <a href="/createStories" class="storiesBtn" style="text-decoration:none; width: fit-content; height:fit-content;">
                 <img src="{{ asset('images/plus-icon.png') }}" style="width: 50px; height:50px;">
             </a>
