@@ -17,26 +17,47 @@ document.addEventListener("DOMContentLoaded", function() {
     
             // Проверяем, заполнены ли все поля
             if (name === "" || email === "" || dateOB === "") {
-                alert.classList.add("show"); // Показываем уведомление
+                alert.classList.remove("d-none");
+                setTimeout(() => {
+                    alert.classList.add("show"); // Показываем уведомление
+                },1);
                 setTimeout(() => {
                     alert.classList.remove("show"); // Скрываем уведомление после 5 секунд
+                    setTimeout(() => {
+                        alert.classList.add("d-none");
+                    }, 1000);
                 }, 3000);
             } else {
                 if (password.length < 8) {
-                    alertPass.classList.add("show");
+                    alertPass.classList.remove("d-none");
+                    setTimeout(() => {
+                        alertPass.classList.add("show"); // Показываем уведомление
+                    },1);
                     setTimeout(() => {
                         alertPass.classList.remove("show"); // Скрываем уведомление после 5 секунд
+                        setTimeout(() => {
+                            alertPass.classList.add("d-none");
+                        }, 1000);
                     }, 3000);
                 }
                 else {
                     if (password != passwordRepeat) {
-                        alertPassRep.classList.add("show");
+                        alertPassRep.classList.remove("d-none");
+                        setTimeout(() => {
+                            alertPassRep.classList.add("show"); // Показываем уведомление
+                        },1);
                         setTimeout(() => {
                             alertPassRep.classList.remove("show"); // Скрываем уведомление после 5 секунд
+                            setTimeout(() => {
+                                alertPassRep.classList.add("d-none");
+                            }, 1000);
                         }, 3000);
                     }
                     else {
                         alertPassRep.classList.remove("show");
+                        setTimeout(() => {
+                            alertPassRep.classList.add("d-none");
+                        }, 1000);
                         this.submit();
                     }
                     

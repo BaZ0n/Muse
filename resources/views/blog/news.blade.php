@@ -15,6 +15,28 @@
         </form>
     </div>
 
+    {{-- Сторисы --}}
+    <div class="container mx-2 px-5" style="overflow-y: hidden">
+        <div class="row align-items-center mx-3 px-2" style="justify-content: space-between; text-align: center; display: flex; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; max-width:732px; max-height:420px; min-height: 150px">  {{-- При желании можно использовать шрифт Lato( font-family:Lato ) --}}
+            @foreach ($stories as $postStories)
+            <div class="col my-5" style="width: fit-content">
+                <a href="/post/{{$postStories->id}}" class="storiesOpen" style="border-radius: 10px;">
+                    <div class="stories" style="position: relative">
+                        <img src="images/post/{{$postStories->img_post}}" alt="stories1" class="img" style="width:200px; height:300px; object-fit:cover; border-radius:10px">
+                        <div class="container" style="border-radius: 10px; position: absolute; top:0; left:0; background: linear-gradient(rgba(0, 0, 0, 0.8), 50%, rgba(0, 0, 0, 0))">
+                            <p id="storiesText1" class="text my-3" style="color:white;">{{$postStories->title}}</p>
+                        </div>
+                        <div class="container" style="border-radius: 10px; position: absolute; bottom:0; right:0; background: linear-gradient(rgba(0, 0, 0, 0), 60%, rgba(0, 0, 0, 0.8))">
+                            <p id="storiesDate1" class="text my-3" style="color:white;">{{$postStories->date_post}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            @endforeach
+        </div>
+    </div>
+
     <ul class="posts-container w-auto px-5 my-3" style="color:white; font-family:Roboto">
         @foreach ($posts as $post)   
             <a class="postRead" href="/post/{{$post->id}}">

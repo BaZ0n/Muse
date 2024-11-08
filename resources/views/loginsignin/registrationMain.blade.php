@@ -18,6 +18,20 @@
 
 <body style="background: black; background-image: url({{asset('images/background-half.png')}}); background-repeat: no-repeat; background-size: contain; background-attachment:fixed; font-family: Cormorant Garamond;">
     
+    <div class="container" style="position: fixed; top: 15px; right: 15px; width:400px;">
+        <div id="alert" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+            <strong>Ошибка!</strong> Введите данные во все поля.
+        </div> 
+
+        <div id="alertPass" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+            <strong>Ошибка!</strong> Размер пароля должен быть от 8 символов.
+        </div>
+
+        <div id="alertPassRep" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+            <strong>Ошибка!</strong> Повторите пароль ещё раз.
+        </div>
+    </div>
+
     {{-- Контейнер на всю ширину экрана и строковый контейнер чтобы столбцам было за что цепляться (в интернете так было написано) --}}
     <div class="container-fluid">
         <div class="row align-items-start" style="justify-content: space-between">
@@ -39,11 +53,6 @@
             {{-- Правый столбец --}}
             <div class="col-6 my-5 mx-5">
                 <h1 class="text-center fs-1 mx-5" style="font-family: Cormorant Garamond; color:white">Регистрация</h1>
-                
-                <div id="alert" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
-                    <strong>Ошибка!</strong> Введите данные во все поля.
-                </div> 
-               
 
                 {{-- Форма регистрации --}}
                 <form id="registrForm" method="post" action="/blogMainPost">
@@ -78,17 +87,10 @@
                         <input type="password" id="password" name="password" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white"  placeholder="*****">
                     </div>
 
-                    <div id="alertPass" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
-                        <strong>Ошибка!</strong> Размер пароля должен быть от 8 символов.
-                    </div>
-
                     {{-- Пароль ещё раз --}}
                     <div class="form-group my-3">
                         <label for="passwordRepeatLabel" class="text fs-4 my-3" style="color: white">Повторите Пароль</label>
                         <input type="password" id="passwordRepeat" name="passwordRepeat" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="*****">
-                    </div>
-                    <div id="alertPassRep" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
-                        <strong>Ошибка!</strong> Повторите пароль ещё раз.
                     </div>
                     
                     {{-- Кнопочка --}}

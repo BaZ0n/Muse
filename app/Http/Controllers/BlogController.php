@@ -119,7 +119,9 @@ class BlogController extends Controller
         else{
             $posts = DB::table('posts') ->join('users', 'posts.user_id', '=', 'users.id') ->where('posts.stories', 0) ->orderBy('created_at', 'desc') ->select('posts.*', 'users.name_first as author_name_first', 'users.name_last as author_name_last') ->get();
         }
-        return view('blog/news', ['user' => $user], ['posts' => $posts]);
+
+        $stories = DB::table('posts') ->where( 'posts.stories', 1) ->orderBy('created_at', 'desc') -> select("*") -> get();
+        return view('blog/news', ['user' => $user, 'posts' => $posts,'stories' => $stories]);
     }
 
     public function blogMain(Request $request){
@@ -133,8 +135,7 @@ class BlogController extends Controller
         else{
             $posts = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 0) ->orderBy('created_at', 'desc') -> select("*")  -> get();
         }
-        
-        
+
         $stories = DB::table('posts')->  where('user_id', $user->id)-> where( 'posts.stories', 1) ->orderBy('created_at', 'desc') -> select("*") -> get();
         return view('blog/blogMain', ['user'=> $user, 'posts' => $posts, 'stories'=> $stories]);
     }
