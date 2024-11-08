@@ -39,9 +39,14 @@
             {{-- Правый столбец --}}
             <div class="col-6 my-5 mx-5">
                 <h1 class="text-center fs-1 mx-5" style="font-family: Cormorant Garamond; color:white">Регистрация</h1>
+                
+                <div id="alert" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
+                    <strong>Ошибка!</strong> Введите данные во все поля.
+                </div> 
+               
 
                 {{-- Форма регистрации --}}
-                <form method="post" action="/blogMainPost">
+                <form id="registrForm" method="post" action="/blogMainPost">
                     @csrf
                     {{-- Имя --}}
                     <div class="form-group my-3">
@@ -64,7 +69,7 @@
                     {{-- Почта --}}
                     <div class="form-group my-3">
                         <label id="userEmail" for="emailLabel" class="text fs-4 my-3" style="color: white">Введите почтовый адрес</label>
-                        <input type="email" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="email" name="email" placeholder="name@example.com">
+                        <input type="email" id="email" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" id="email" name="email" placeholder="name@example.com">
                     </div>
 
                     {{-- Пароль --}}
@@ -73,10 +78,17 @@
                         <input type="password" id="password" name="password" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white"  placeholder="*****">
                     </div>
 
+                    <div id="alertPass" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
+                        <strong>Ошибка!</strong> Размер пароля должен быть от 8 символов.
+                    </div>
+
                     {{-- Пароль ещё раз --}}
                     <div class="form-group my-3">
                         <label for="passwordRepeatLabel" class="text fs-4 my-3" style="color: white">Повторите Пароль</label>
                         <input type="password" id="passwordRepeat" name="passwordRepeat" class="form-control fs-5" style="background-color: black; border: 1px solid gray; color: white" placeholder="*****">
+                    </div>
+                    <div id="alertPassRep" class="alert alert-warning alert-dismissible fade my-3" style="position: fixed; top:15px; right:15px" role="alert">
+                        <strong>Ошибка!</strong> Повторите пароль ещё раз.
                     </div>
                     
                     {{-- Кнопочка --}}
@@ -93,5 +105,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/formCheck.js') }}"></script>
 </body>
 </html>

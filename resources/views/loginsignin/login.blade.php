@@ -11,9 +11,17 @@
         
         <h1 class="text-center fs-2 mb-3">Вход</h1> {{-- Вход, информативно не правда ли --}}
 
+        
+
         <div class="container p-4 mb-5"> {{-- Контейнер для полей и кнопки --}}
-            <form method="post" action="/blogMainPost">
+            
+            <div id="alert" class="alert alert-warning alert-dismissible fade" role="alert" style="position: fixed; top:15px; right:15px">
+                <strong>Ошибка!</strong> Введите данные во все поля.
+            </div> 
+
+            <form id="loginForm" method="post" action="/blogMainPost">
                 @csrf
+
                 {{-- Почта --}}
                 <div class="form-group px-4 pb-1">
                     <label for="emailLabel" class="text fs-4" style="color: black">Адрес электронной почты</label>
