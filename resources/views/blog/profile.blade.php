@@ -1,10 +1,21 @@
 @extends("blog/profileLayout")
 
 @section("main_content")
+    <div class="container" style="position: fixed; top: 15px; right: 15px; width:400px">
+        <div id="alertProfileInfo" class="alert alert-info fade d-none" role="alert">
+            Вы не ввели новые данные!
+        </div>
+        <div id="alertProfileSuccess" class="alert alert-success fade d-none" role="alert">
+            Данные успешно обновлены!
+        </div>
+    </div>
     <div class="container align-items-center d-flex justify-content-center" style="margin-left:0">
         <div class="col-8 my-5 mx-5">
+            <div id="alertProfile" class="alert alert-success fade d-none"  style="position: fixed; top: 15px; right: 15px" role="alert">
+                Данные успешно обновлены!
+              </div>
             <h1 class="text-center fs-1" style="font-family: Cormorant Garamond; color:white">Профиль</h1>
-            <form method="POST" action="/profile/check" enctype="multipart/form-data">
+            <form id="profileForm" method="POST" action="/profile/check" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-3">
                     <label for="nameLabel" class="text fs-4 my-3" style="color: white">Имя</label>
@@ -36,7 +47,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="newPhotoLabel" class="text fs-4 my-3" style="color: white">Загрузите фотографию</label>
-                    <input name="photoFile" type="file" class="form-control fs-5" style="background-color: black; border: 1px solid rgba(255, 255, 255, 0.1);">
+                    <input name="photoFile" id="photoNew" type="file" class="form-control fs-5" style="background-color: black; border: 1px solid rgba(255, 255, 255, 0.1);">
                 </div>
                 
                 <div class="container d-flex justify-content-center align-items-center">
@@ -50,4 +61,5 @@
             </a>
         </div>
     </div>
+    <script src="{{ asset('js/formCheck.js') }}"></script>
 @endsection

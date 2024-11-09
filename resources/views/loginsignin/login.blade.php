@@ -15,7 +15,7 @@
 
         <div class="container p-4 mb-5"> {{-- Контейнер для полей и кнопки --}}
             
-            <div id="alert" class="alert alert-warning alert-dismissible fade" role="alert" style="position: fixed; top:15px; right:15px">
+            <div id="alert" class="alert alert-warning fade" role="alert" style="position: fixed; top:15px; right:15px">
                 <strong>Ошибка!</strong> Введите данные во все поля.
             </div> 
 

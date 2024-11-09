@@ -19,15 +19,15 @@
 <body style="background: black; background-image: url({{asset('images/background-half.png')}}); background-repeat: no-repeat; background-size: contain; background-attachment:fixed; font-family: Cormorant Garamond;">
     
     <div class="container" style="position: fixed; top: 15px; right: 15px; width:400px;">
-        <div id="alert" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+        <div id="alert" class="alert alert-warning fade my-1 d-none" role="alert">
             <strong>Ошибка!</strong> Введите данные во все поля.
         </div> 
 
-        <div id="alertPass" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+        <div id="alertPass" class="alert alert-warning fade my-1 d-none" role="alert">
             <strong>Ошибка!</strong> Размер пароля должен быть от 8 символов.
         </div>
 
-        <div id="alertPassRep" class="alert alert-warning alert-dismissible fade my-1 d-none" role="alert">
+        <div id="alertPassRep" class="alert alert-warning fade my-1 d-none" role="alert">
             <strong>Ошибка!</strong> Повторите пароль ещё раз.
         </div>
     </div>
