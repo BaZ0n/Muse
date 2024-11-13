@@ -55,5 +55,11 @@ php artisan key:generate
 mkdir public\images\post
 mkdir public\images\avatar\avatarUser
 ```
+
+<p>8. Запуск локального сервера </p>
+
+```
+php artisan ser
+```
 <p>Примечание:</p>
 <p> Все команды вводятся в терминал Visual studio, в каталоге ...\Muse\</p>
